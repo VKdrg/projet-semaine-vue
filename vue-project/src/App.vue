@@ -1,11 +1,36 @@
-<script setup></script>
+<script>
+import ProductCard from './components/ProductCard.vue';
+
+export default {
+  components: {
+    ProductCard
+  },
+  data() {
+    return {
+      cartTotal: 0
+    }
+  },
+  methods: {
+
+  },
+  computed:{
+    increaseCart() {
+      cartTotal + this.price
+    }
+  }
+}
+
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <nav>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/products">Products</RouterLink>
+    <RouterLink to="/cart">Cart</RouterLink>
+  </nav>
+  <RouterView />
+
+  <ProductCard @add-to-cart="increaseCart" />
 </template>
 
-<style scoped></style>
+<style></style>
