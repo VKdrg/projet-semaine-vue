@@ -1,5 +1,7 @@
 <script></script>
 
-<template></template>
+<template>
+    <h2>Page produits</h2>
+</template>
 
 <style></style>

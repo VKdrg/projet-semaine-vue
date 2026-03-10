@@ -1,5 +1,12 @@
-<script></script>
+<script>
+import ProductCard from './ProductCard.vue';
 
-<template></template>
+</script>
+
+<template>
+    <div class="listview">
+        <ProductCard />
+    </div>
+</template>
 
 <style></style>
