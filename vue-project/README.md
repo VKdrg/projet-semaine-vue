@@ -1,6 +1,30 @@
-# vue-project
+# Project Vue : Mini-site e-commerce
+## School project to discover Vue.js
+### Project goal
+Create a front-end app in Vue.js for a mini e-commerce website in which the user can : 
+- see a product list
+- add products to a cart
+- remove products from a cart
+- see the cart's total in real time
 
-This template should help get you started developing with Vue 3 in Vite.
+### Functionnalities
+1. List products
+- display product name
+- product image
+- product price
+- button "add to cart"
+
+2. Add to cart
+
+3. Remove from cart
+- button "remove from cart" to remove items individually
+- button "clear cart" to remove everything from the cart
+
+4. Cart's total
+Real time update of the total when :
+- user adds a product to the cart
+- user removes a product from the cart
+- user clears cart
 
 ## Recommended IDE Setup
 
