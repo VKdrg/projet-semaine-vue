@@ -3,22 +3,32 @@ export default {
     name: 'ProductCard',
     data() {
         return {
-
+            produc
         }
     },
-    methods: {
-        addToCart() {
-            this.$emit('add-to-cart')
+    watch: {
+        async fetchAPI() {
+            const res = await fetch('https://fakestoreapi.com/products')
+            const data = await res.json()
+
+            const product = data.json()
+            try {
+
+            } catch (error) {
+                console.error(`Error : ${error}`)
+            }
         },
-        // productPage() {
-        //     this.$emit('product-page')
-        // }
+        methods: {
+            addToCart() {
+                this.$emit('add-to-cart')
+            },
+        }
     }
 }
 </script>
 
 <template>
-    <div class="item-card" @click="productPage" > 
+    <div class="item-card" @click="productPage">
         <img src={{ product.image }} alt="photography of the product">
         <div class="product-info">
             <p>{{ product.name }}</p>
@@ -39,7 +49,7 @@ export default {
     font-family: 'Jost';
 }
 
-.item-card{
+.item-card {
     display: flex;
     flex-direction: column;
     padding: 1.3rem 1.6rem;
@@ -49,7 +59,7 @@ export default {
     flex-direction: row;
 }
 
-btn{
+btn {
     padding: 1.2rem 1.6rem;
     border: none;
     border-radius: 16px;

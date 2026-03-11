@@ -1,6 +1,7 @@
 <script>
 import ProductCard from './components/ProductCard.vue';
 
+
 export default {
   components: {
     ProductCard
@@ -13,7 +14,7 @@ export default {
   methods: {
 
   },
-  computed:{
+  computed: {
     increaseCart() {
       cartTotal + this.price
     }
