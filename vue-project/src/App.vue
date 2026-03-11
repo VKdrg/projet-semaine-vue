@@ -1,37 +1,70 @@
 <script>
-import ProductCard from './components/ProductCard.vue';
-
+import { RouterView } from 'vue-router';
+import Navbar from './components/Navbar.vue';
 
 export default {
   components: {
-    ProductCard
+    Navbar
   },
   data() {
     return {
-      cartTotal: 0
+      users: [],
+      error: null
+      // cartTotal: 0
     }
   },
   methods: {
-
-  },
-  computed: {
-    increaseCart() {
-      cartTotal + this.price
+    async fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products')
+        if (!response.ok) {
+          throw new Error('Error' + Error)
+        }
+        users = response.json()
+      }
+      catch (error) {
+        console.log(`Error : ${error}`)
+      }
     }
+  },
+  // computed: {
+  //   increaseCart() {
+  //     cartTotal + this.price
+  //   }
+  // },
+  // provide() {
+  //   users: this.users
+  // },
+  mounted() {
+    this.fetchProducts()
   }
 }
 
 </script>
 
 <template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/products">Products</RouterLink>
-    <RouterLink to="/cart">Cart</RouterLink>
-  </nav>
+  <Navbar />
+  <h1>Products e-shop</h1>
   <RouterView />
 
-  <ProductCard @add-to-cart="increaseCart" />
+
 </template>
 
-<style></style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  font-size: 62.5%;
+  font-family: 'Host Grotesk';
+}
+
+body .light{
+  background-color: whitesmoke;
+  color: #050505;
+}
+
+body.dark{
+  background-color: #101010;
+  color: whitesmoke;
+}
+</style>

@@ -3,36 +3,24 @@ export default {
     name: 'ProductCard',
     data() {
         return {
-            produc
+            product
         }
     },
-    watch: {
-        async fetchAPI() {
-            const res = await fetch('https://fakestoreapi.com/products')
-            const data = await res.json()
-
-            const product = data.json()
-            try {
-
-            } catch (error) {
-                console.error(`Error : ${error}`)
-            }
+    watch: {},
+    methods: {
+        addToCart() {
+            this.$emit('add-to-cart')
         },
-        methods: {
-            addToCart() {
-                this.$emit('add-to-cart')
-            },
-        }
     }
 }
 </script>
 
 <template>
     <div class="item-card" @click="productPage">
-        <img src={{ product.image }} alt="photography of the product">
+        <!-- <img src={{ product.image }} alt="photography of the product"> -->
         <div class="product-info">
-            <p>{{ product.name }}</p>
-            <p>{{ product.price }}</p>
+            <!-- <p>{{ product.name }}</p>
+            <p>{{ product.price }}</p> -->
         </div>
         <div class="cart-add">
             <button @click="addToCart">+</button>
