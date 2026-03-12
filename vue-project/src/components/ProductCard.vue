@@ -1,4 +1,6 @@
 <script>
+import ProductPage from '@/views/ProductPage.vue';
+
 export default {
     name: 'ProductCard',
     data() {
@@ -11,16 +13,27 @@ export default {
         addToCart() {
             this.$emit('add-to-cart')
         },
-    }
+        CardWorking() {
+            console.log('this works')
+        },
+        getProducts() {
+            this.products.forEach((product) => {
+                console.log(product.title)
+            })
+        }
+    },
+    inject: [
+        'products'
+    ]
 }
 </script>
 
 <template>
-    <div class="item-card" @click="productPage">
+    <div class="item-card" @click="CardWorking">
         <!-- <img src={{ product.image }} alt="photography of the product"> -->
         <div class="product-info">
-            <!-- <p>{{ product.name }}</p>
-            <p>{{ product.price }}</p> -->
+            <p>{{ product.title }}</p>
+            <!-- <p>{{ product.price }}</p> -->
         </div>
         <div class="cart-add">
             <button @click="addToCart">+</button>

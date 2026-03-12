@@ -6,9 +6,20 @@ export default {
     components: {
         ProductList
     },
+    methods: {
+        ApiFetch() {
+            this.products.forEach((product) => {
+                console.log(product.title);
+
+            })
+        }
+    },
     // data(){
     //     // idfk
-    // }
+    // },
+    inject: [
+        'products'
+    ]
 }
 
 </script>
@@ -16,7 +27,7 @@ export default {
 <template>
     <!-- navbar -->
 
-    <h1>Site e-commerce</h1>
+    <h2>Home Page</h2>
 
     <ProductList />
 

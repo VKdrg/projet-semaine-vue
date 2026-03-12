@@ -1,5 +1,7 @@
 <script></script>
 
-<template></template>
+<template>
+    <h2>Cart</h2>
+</template>
 
 <style></style>
