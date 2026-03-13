@@ -1,22 +1,34 @@
 <script>
 import ProductCard from './ProductCard.vue';
 export default {
-    name : 'ProductList',
+    name: 'ProductList',
     data() {
         return {
             product: {},
-            list : {}
+            list: {}
         }
-    }
+    },
+    inject: [
+        'products'
+    ]
 }
 
 </script>
 
 <template>
     <div class="listview">
-        <h3>view products here</h3>
-        <ProductCard />
+        <ProductCard>
+            <p class="body2">product.title</p>
+            <i class="fa-solid fa-basket-shopping"></i>
+            <ul>
+                <li v-for="product in products"></li>
+            </ul>
+        </ProductCard>
     </div>
 </template>
 
-<style></style>
+<style>
+i {
+    font-size: 2rem;
+}
+</style>

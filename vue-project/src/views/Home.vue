@@ -14,9 +14,11 @@ export default {
             })
         }
     },
-    // data(){
-    //     // idfk
-    // },
+    data() {
+        return {
+
+        }
+    },
     inject: [
         'products'
     ]
@@ -25,12 +27,15 @@ export default {
 </script>
 
 <template>
-    <!-- navbar -->
-
-    <h2>Home Page</h2>
+    <h1>New Collection !</h1>
+    <p class="intro">Discover our new collection of (not so) ethically sourced and very random items, to serve you and those around you in your everyday and on the special occasions of your horribly basic and mundane life.</p>
 
     <ProductList />
 
 </template>
 
-<style></style>
+<style>
+.intro{
+    width: 50%;
+}
+</style>

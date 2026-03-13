@@ -50,9 +50,11 @@ export default {
 
 <template>
   <Navbar />
-  <h1>Products e-shop</h1>
-  <RouterView />
-  <Home />
+  <main>
+    <!-- <h1>Products e-shop</h1> -->
+    <RouterView />
+    <Home />
+  </main>
 
 
 </template>
@@ -75,6 +77,13 @@ body.dark {
   color: whitesmoke;
 }
 
+main {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
 h1 {
   font-size: 4rem;
   font-weight: 700;
@@ -87,8 +96,22 @@ h2 {
   width: fit-content;
 }
 
+h3, .body1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  width: fit-content;
+}
+
 p {
   font-size: 2rem;
   font-weight: 300;
+  width: fit-content;
+}
+
+.body2 {
+  font-size: 1.6rem;
+  font-weight: 100;
+  letter-spacing: 2%;
+  width: fit-content;
 }
 </style>
