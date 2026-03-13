@@ -1,12 +1,6 @@
 <script>
 export default {
     name: 'ProductCard',
-    data() {
-        return {
-            products
-        }
-    },
-    // watch: {},
     methods: {
         addToCart() {
             this.$emit('add-to-cart')
@@ -24,19 +18,16 @@ export default {
 </script>
 
 <template>
-    <p>waw damn</p>
-    <!-- <div class="item-card" @click="CardWorking">
-        <img src={{ product.image }} alt="photography of the product"> 
-        <div class="product-info">
+    <button @click="getProducts">waw damn</button>
+    <ul>
+        <li v-for="product in products" :key="product.id">
             <p>{{ product.title }}</p>
-            <p>{{ product.price }}</p>
-        </div>
-        <div class="cart-add">
-            <button @click="addToCart">+</button>
-        </div>
-    </div> -->
+        </li>
+    </ul>
 </template>
 
 <style>
-
+button{
+    font-size: 2rem;
+}
 </style>

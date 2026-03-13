@@ -7,7 +7,10 @@ import Home from './views/Home.vue';
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Home,
+    ProductList,
+    ProductCard
   },
   data() {
     return {
@@ -52,7 +55,7 @@ export default {
   <Navbar />
   <main>
     <!-- <h1>Products e-shop</h1> -->
-    <RouterView />
+    <!-- <RouterView /> -->
     <Home />
   </main>
 
@@ -64,7 +67,9 @@ export default {
 
 * {
   font-size: 62.5%;
-  font-family: 'Host Grotesk';
+  font-family: 'Host Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body .light {

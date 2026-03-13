@@ -1,10 +1,12 @@
 <script>
+import ProductCard from '@/components/ProductCard.vue';
 import ProductList from '@/components/ProductList.vue';
 
 export default {
     name: 'Home',
     components: {
-        ProductList
+        ProductList,
+        ProductCard
     },
     methods: {
         ApiFetch() {

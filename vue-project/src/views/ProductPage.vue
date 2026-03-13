@@ -6,9 +6,9 @@ export default {
     components: {
         ProductList
     },
-    data() {
-        return {}
-    },
+    // data() {
+    //     return {}
+    // },
     methods: {
 
     }
